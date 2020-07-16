@@ -1,0 +1,52 @@
+<div class="class1">
+    <div class="card-header">
+        {{title}}
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-primary"
+                            (click)='toggleImage()'>
+                            {{showImage? 'Hide':'Show'}} Image</button>
+                        </th>
+                        <th>Product</th>
+                        <th>Code</th>
+                        <th>Available</th>
+                        <th>Price</th>
+                        <th>5 Star Rating</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let product of products'>
+                        <td><img *ngIf='showImage' 
+                            [src]='product.imageUrl'
+                        [title]='product.productName'
+                        [style.width.px]='imageWidth'
+                        [style.margin.px]='imageMargin'></td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productCode}}</td>
+                        <td>{{product.releaseDate}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.starRating}}</td>
+                        <td>
+                            <span>
+                                <a class="nav-link" [routerLink]="['/update',product._id]" *ngIf="_auth.loggedIn()" >Update</a>
+                            </span>
+                            <!-- <span> -->
+                                <a class="nav-link delete1" (click)="deleteP(product._id)" *ngIf="_auth.loggedIn()" routerLinkActive="active">Delete</a>
+                            <!-- </span> -->
+                            
+                            <!-- <button class="btn btn-danger" *ngIf="_auth.loggedIn()" (click)="deleteP(product._id)">Delete</button> -->
+                          </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

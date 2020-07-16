@@ -1,0 +1,26 @@
+
+.class1{
+    margin-top: 10px;
+}
+.card-header{
+    background-color: cadetblue;
+}
+.delete1{
+    color: red;
+    cursor: pointer;
+}
+.table{
+   
+    font-weight: bold;
+    font-size: medium;
+    border: 5px solid black;
+}
+#tableList tr:nth-child(even){background-color: #7ef1bc86}
+#tableList tr:hover {background-color: rgb(250, 137, 137);}
+/* #tableList tr{
+    background-color: aqua;
+} */
+th {
+  background-color: #4CAF50;
+  color: white;
+}
