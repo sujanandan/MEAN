@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // const mongoose = require('mongoose');
-// const db ='mongodb+srv://user_suja:suja_nandan85@mycluster.txxs0.azure.mongodb.net/eventdb?retryWrites=true&w=majority'
+
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const ProductData=require('../models/Productdata');
@@ -65,7 +65,14 @@ router.post('/insert',verifyToken,function(req,res){
    console.log(product);
     console.log(typeof product);
    var product=new ProductData(product);
-   product.save();
+   product.save((err,data)=>{
+       if(err){
+           console.log(err);
+       }
+       else{
+           console.log(data);
+       }
+   });
 });
 
 
