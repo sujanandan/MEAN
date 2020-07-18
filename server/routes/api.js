@@ -1,22 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-// const mongoose = require('mongoose');
-
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const ProductData=require('../models/Productdata');
-
-// const user = require('../models/user');
-
-// mongoose.connect(db,function(err){
-//     if(err){
-//         console.error("Error"+err);
-//     }
-//     else{
-//         console.log("Connected to mongodb");
-//     }
-// });
 
 router.get('/',(req,res) => {
     res.send("From Api");
