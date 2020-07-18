@@ -15,10 +15,11 @@ export class UpdateComponent implements OnInit {
 
   title:string = "Edit Product";
 
-  public updateProduct: ProductModel;
+//   public updateProduct: ProductModel;
 
   constructor(private productService:EventService,private actRoute: ActivatedRoute,private router:Router) { }
   // productItem=new ProductModel(null,null,null,null,null,null,null,null)
+  updateProduct=new ProductModel(null,null,null,null,null,null,null,null)
   // products:ProductModel;
   ngOnInit(): void {
     console.log("inside update");
